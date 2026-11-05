@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bellamaos.css">
+    
+    <title>Bella mãos</title>
+</head>
+<body>
+    <header class="topo">
+       <a href="#inicio " class="logo" aria-label="Bella Mãos - inicio">
+        <svg width="44" height="44" viewBox="0 0 200 200" ariel-hidden="true">
+            <g transform="translate(100,176)">
+                <g transform="rotate(-26)"><path d="M-17 0 L-17 -92 A17 0 0 1 17 -92 L17 0 Q0 9 -17 0 Z" fill="#F2B8C6"/></g>
+            <g transform="rotate(26)"><path d="M-17 0 L-17 -92 A17 0 0 1 17 -92 L17 0 Q0 9 -17 0 Z" fill="#E58CA5"/></g>
+            <path d="M-19 0 L-19 -112 A19 19 0 0 1 19 -112 L19 0 Q0 10 -19 0 Z" fill="#B83B63"/>
+            </g>
+        </svg>
+        <span class="logo-texto">Bella Mãos</span>
+    </a>
+    <button class="menu-btn" id="menu-btn" arial-label="Abrir menu" arial-expanded="false">
+        <span></span><span></span><span></span>
+    </button>
+    <nav id="menu" aria-label="Principal">
+        <ul>
+            <li><a href="#serviços">Serviços</a></li>
+            <li><a href="#galeria">Galeria</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <!--inicio-->
+    <section id="inicio" class="hero">
+        <div class="hero-texto">
+            <p class="etiqueta">Manicure e nail designer</p>
+            <h1>Unhas bonitas, cuidada de verdade.</h1>
+            <p class="hero-sub">Esmaltação, alongamento e nail feitos com calma, higiene e atenção a cada detalhe.</p>
+            <a href="#agendamento" class="botao">Agende seu horário</a>
+        </div>
+        <div class="hero-foto" role="img" arial-label="Espaço para foto da manicure"><span><img src="Foto /logo-bella-maos/png/logo-bella-maos-fundo-vinho.png" alt="foto da minicure" width="300" height="210"></span></div>
+    </section>  
+
+    <!--serviços-->
+
+    <section id="serviços" class="secao secao-branca">
+        <div class="container">
+            <h2>Serviços</h2>
+            <p class="secao-sub">Escolhas o que combina com voce. troque os valores pelos seus</p>
+            <div class="grid-servicos">
+               <article class="card">
+                <h3>Esmaltação em gel</h3>
+                <p>Cor uniforme e brilho que dura semanas</p>
+                <strong>a partir de R$ 95,00</strong>
+               </article>
+                <article class="card">
+                 <h3>Alongamento em gel</h3>
+                 <p>Unhas mais longas com acabamento natural.</p>
+                 <strong>a partir de R$ 150,00</strong>
+                </article>
+                <article class="card">
+                    <h3>Fibra de vidro</h3>
+                    <p>Leve, resistente e com aparência delicada</p>
+                    <strong>a partir de R$ 120,00</strong>
+                </article>
+                <article class="card">
+                    <h3>Nail art</h3>
+                    <p>Desenhos, pedrarias e francesinhas personalizadas</p>
+                    <strong>a partir de R$ 190,00</strong>   
+                </article>
+                <article class="card">
+                    <h3>Remoção</h3>
+                    <p>Retirada segura, sem agredir a unha natural.</p>
+                    <strong>a partir de R$ 90,00</strong>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!--galeria-->
+    <section id="galeria" class="secao">
+        <div class="container"
+        h2>Galeria</h2>
+        <p class="secao-sub">Alguns dos meus trabalhos, Troque os blocos por suas fotos</p>
+        <div class="filtros"> 
+            <button class="filtro ativo" data-filtro="*">Todos</button>
+            <button class="filtro" data-filtro=".Francesinha">Francesinha</button>
+            <button class="filtro" data-filtro=".nailart">nailart</button>
+            <button class="filtro" data-filtro=".gel">gel</button>
+         </div>
+         <div class="grid-galeria">
+            <!--  Para usar foto: <img src="img/foto1.jpg" alt="Descrição"> dentro da figure -->
+              <figure class="foto f1" data-categoria="Francesinha" role="img"arial-label="francesinha clássica"><figcaption><img src="Foto /francesinha/pexels-anastasia-kisil-912962163-29837129.jpg" alt="francesinha clássica"></figcaption></figure>
+              <figure class="foto f2" data-categoria="nailart" role="img" arial-label="nail art com pedrarias"><figcaption><img src="Foto /nail art/nailart1.jpg" alt="nail art com pedrarias"></figcaption></figure>
+              <figure class="foto f3" data-categoria="gel" role="img" arial-label="unhas em gel"><figcaption><img src="Foto /Gel/gel3.jpg" alt="unhas em gel"></figcaption></figure>
+              <figure class="foto f4" data-categoria="Francesinha" role="img" arial-label="francesinha com glitter"><figcaption><img src="Foto /esmaltacao/esmaltação3.jpg" alt="francesinha com glitter"></figcaption></figure>
+              <figure class="foto f5" data-categoria="nailart" role="img" arial-label="nail art com desenhos"><figcaption><img src="Foto /nail art/nailart3.jpg" alt="nail art com desenhos"></figcaption></figure>
+           </div>
+        </div>
+    </section>
+
+    <!--sobre-->
+    <section id="sobre" class="secao secao-rosa"> 
+        <div class="container sobre"> 
+            <div class="sobre-foto" role="img" arial-label="Espaço para foto da manicure"><span><img src="Foto /logo-bella-maos/png/logo-bella-maos-fundo-vinho.png" alt="foto da minicure" width="300" height="210"><span></div>
+            <div>
+                <h2>Sobre mim</h2>
+                <p>Oi, eu sou a Maria, manicure profissional com mais de 10 anos de experiência no ramo. Meu objetivo é oferecer serviços de qualidade e criar designs únicos para cada cliente.</p>
+                <p>Eu sou apaixonada por criar designs únicos e oferecer um serviço de excelência, sempre priorizando a higiene e o cuidado com as unhas naturais. Venha conhecer meu trabalho e se encantar com minhas criações!</p>
+                </p>
+            </div>
+        </div>
+    </section>
+     <!-- agendamento-->
+      <section id="agendamento" class="secao">  
+        <div class="container container-estreito">
+            <h2>Agende seu horário</h2>
+            <p class="secao-sub"></p>Preencha os dados e entraremos em contato com para confirma.</p>
+
+            <form id="formAgendamento" novalidade>
+                <div class="campo">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" placeholder=" Seu nome">
+                    <small class="error" id="error-nome"></small>
+                </div>
+                <div class="campo">
+                    <label for="telefone">Telefone</label>
+                    <input type="tel" id="telefone" placeholder="(00) 00000-0000">
+                    <small class="error" id="error-telefone"></small>
+                </div>
+                <div class="campo">
+                    <label for="servico">Serviço</label>
+                    <select id="servico" name="servico">
+                        <option value="">Selecione um serviço</option>
+                        <option value="francesinha">Francesinha</option>
+                        <option value="nailart">Nail Art</option>
+                        <option value="gel">Unhas em Gel</option>
+                    </select>
+                </div>
+                <div class="linha">
+                    <div class="campo">
+                        <label for="data">Data</label>
+                        <input type="date" id="data">
+                        <small class="error" id="error-data"></small>
+                    </div>
+                    <div class="campo">
+                        <label for="hora">Hora</label>
+                        <input type="time" id="horario">
+                        <small class="error" id="error-horario"></small>
+                    </div>
+                </div>    
+               <div class="campo">
+                <label for="observacoes">Observações</label>
+                <textarea id="observacoes" rows="3" placeholder="Cor, formato, inspiração..."></textarea>
+                </div>
+                <button type="submit" class="botao botao-cheio">Enviar pedido de agendamento</button>
+            </form>
+
+            <div id="sucesso" class="sucesso" hidden>
+                <h3 id="sucessoTitulo"></h3>
+                <p>Entraremos em contato pelo telefone informado para confirmar o agendamento.
+                </p>
+                <button type="button" class="botao" id="novoAgendamento">Fazer outro Agendamento</button>
+            </div>
+        </div>
+      </section>
+</main>
+<!--Rodapé-->
+<footer class="rodape">
+    <div class="container rodape-grid"></div>
+    <div>
+        <p class="roda-logo">Bella Mãos</p>
+        <p>Av. DR frederico muller, 849</p>
+    </div>
+    <div>
+        <p><strong>Contato</strong></p>
+        <p>Whatsapp: (11) 1234-5678</p>
+        <p>Instagram: @bella_maos</p>
+        </p>
+    </div>
+    <div>
+        <p><strong>Horário</strong></p>
+        <p>Segunda a Sexta: 9h às 18h</p>
+    </div>
+    </div>
+    <p class="copy">© <span id="ano"></span> Bella Mãos. Todos os direitos reservados.</p>
+</footer>
+
+<!-- botão flutuante do whatsapp-->
+
+ <a class="whats" href="https://wa.me/16996469913?text=ola! Quero agendar um horário." target="_blank" rel="noopener" aria-label=" Chamar no WhatsApp">WhatsApp</a>
+ 
+ <script src="script.js"></script>
+
+</body>
+</html>
