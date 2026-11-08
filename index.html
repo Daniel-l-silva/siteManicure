@@ -4,7 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="bellamaos.css">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <script>
+    // Aplica o tema salvo antes de desenhar a página (evita "piscar")
+    try {
+      var t = localStorage.getItem('tema');
+      if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'escuro' : 'claro';
+      document.documentElement.setAttribute('data-tema', t);
+    } catch (e) {}
+  </script>
     <title>Bella mãos</title>
 </head>
 <body>
@@ -19,15 +28,18 @@
         </svg>
         <span class="logo-texto">Bella Mãos</span>
     </a>
-    <button class="menu-btn" id="menu-btn" arial-label="Abrir menu" arial-expanded="false">
-        <span></span><span></span><span></span>
-    </button>
+
+      <button type="button" class="tema-btn" id="temaBtn" aria-pressed="false">Modo escuro</button>
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+      </button>
     <nav id="menu" aria-label="Principal">
         <ul>
             <li><a href="#serviços">Serviços</a></li>
             <li><a href="#galeria">Galeria</a></li>
+            <li><a href="#orçamento">Orçamento</a></li>
             <li><a href="#sobre">Sobre</a></li>
-            <li><a href="#contato">Contato</a></li>
+            <li><a href="agendamento">Agendamento</a></li>
         </ul>
     </nav>
 </header>
@@ -101,7 +113,26 @@
            </div>
         </div>
     </section>
+    <!--Orçamento-->
+    <section id="orcamento" class="secao secao branca">
+        <div class="container container-estreito">
+            <h2>Calcular seu Orçamento</h2>
+            <p class="secao-sub">Marque os serviços e veja o valor estimado. Para mudar os preços, edite o <code>data-preco</code> de cada item.</p>
 
+             <div class="orcamento">
+          <label class="item-orc"><input type="checkbox" data-preco= " 95 " data-nome="Esmaltação em gel"><span>Esmaltação em gel</span><strong> R$ 95 </strong></label>
+          <label class="item-orc"><input type="checkbox" data-preco=" 180" data-nome="Alongamento em gel"><span>Alongamento em gel</span><strong> R$ 180</strong></label>
+          <label class="item-orc"><input type="checkbox" data-preco="200" data-nome="Fibra de vidro"><span>Fibra de vidro</span><strong> R$ 200</strong></label>
+          <label class="item-orc"><input type="checkbox" data-preco="190" data-nome="Nail art"><span>Nail art</span><strong> R$ 190</strong></label>
+          <label class="item-orc"><input type="checkbox" data-preco="90" data-nome="Remoção"><span>Remoção</span><strong> R$ 90</strong> </label>
+
+        </div>
+ 
+        <p class="total" aria-live="polite">Total estimado <strong id="total">R$ 0,00</strong></p>
+        <button type="button" class="botao" id="orcamentoBtn">Pedir este orçamento no WhatsApp</button>
+        <small class="erro" id="orcMsg"></small>
+        </div>
+    </section>
     <!--sobre-->
     <section id="sobre" class="secao secao-rosa"> 
         <div class="container sobre"> 
@@ -126,11 +157,13 @@
                     <input type="text" id="nome" placeholder=" Seu nome">
                     <small class="error" id="error-nome"></small>
                 </div>
+
                 <div class="campo">
                     <label for="telefone">Telefone</label>
                     <input type="tel" id="telefone" placeholder="(00) 00000-0000">
                     <small class="error" id="error-telefone"></small>
                 </div>
+
                 <div class="campo">
                     <label for="servico">Serviço</label>
                     <select id="servico" name="servico">
@@ -138,6 +171,7 @@
                         <option value="francesinha">Francesinha</option>
                         <option value="nailart">Nail Art</option>
                         <option value="gel">Unhas em Gel</option>
+                       
                     </select>
                 </div>
                 <div class="linha">
@@ -191,7 +225,7 @@
 
 <!-- botão flutuante do whatsapp-->
 
- <a class="whats" href="https://wa.me/16996469913?text=ola! Quero agendar um horário." target="_blank" rel="noopener" aria-label=" Chamar no WhatsApp">WhatsApp</a>
+ <a class="whats" href="https://wa.me/5516996469913?text=ola! Quero agendar um horário." target="_blank" rel="noopener" aria-label=" Chamar no WhatsApp">WhatsApp</a>
  
  <script src="script.js"></script>
 
