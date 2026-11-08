@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="bellamaos.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <title>Bella Mãos | Nail Design</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="bellamaos.css">
   <script>
-    // Aplica o tema salvo antes de desenhar a página (evita "piscar")
+  
     try {
       var t = localStorage.getItem('tema');
       if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'escuro' : 'claro';
       document.documentElement.setAttribute('data-tema', t);
     } catch (e) {}
   </script>
-    <title>Bella mãos</title>
 </head>
 <body>
     <header class="topo">
@@ -146,23 +146,24 @@
         </div>
     </section>
      <!-- agendamento-->
-      <section id="agendamento" class="secao">  
-        <div class="container container-estreito">
-            <h2>Agende seu horário</h2>
-            <p class="secao-sub"></p>Preencha os dados e entraremos em contato com para confirma.</p>
-
-            <form id="formAgendamento" novalidade>
-                <div class="campo">
-                    <label for="nome">Nome</label>
-                    <input type="text" id="nome" placeholder=" Seu nome">
-                    <small class="error" id="error-nome"></small>
-                </div>
-
-                <div class="campo">
-                    <label for="telefone">Telefone</label>
-                    <input type="tel" id="telefone" placeholder="(00) 00000-0000">
-                    <small class="error" id="error-telefone"></small>
-                </div>
+         <!-- AGENDAMENTO -->
+    <section id="agendamento" class="secao">
+      <div class="container container-estreito">
+        <h2>Agende seu horário</h2>
+        <p class="secao-sub">Preencha os dados e entraremos em contato para confirmar.</p>
+ 
+        <form id="formAgenda" novalidate>
+          <div class="campo">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" placeholder="Seu nome">
+            <small class="erro" id="erro-nome"></small>
+          </div>
+ 
+          <div class="campo">
+            <label for="telefone">Telefone</label>
+            <input type="tel" id="telefone" placeholder="(00) 00000-0000">
+            <small class="erro" id="erro-telefone"></small>
+          </div>
 
                 <div class="campo">
                     <label for="servico">Serviço</label>
