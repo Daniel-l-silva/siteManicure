@@ -211,7 +211,7 @@ nav a:hover { color: var(--rosa); }
 }
 .foto {
   position: relative;
-  height: 280px;
+  height: 288px;
   margin: 0;
   border-radius: 20px;
   overflow: hidden;
@@ -221,7 +221,7 @@ nav a:hover { color: var(--rosa); }
   transition: transform .25s;
 }
 .foto:hover { transform: scale(1.03); }
-.foto img{ position: absolute; inset: 0; width: 68%; height: 100%; object-fit: cover; }
+.foto img{ position: absolute; inset: 0; width: 66%; height: 100%; object-fit: cover; }
 .foto figcaption img {
   position: relative;
   color: #3B2A2F;
@@ -232,7 +232,7 @@ nav a:hover { color: var(--rosa); }
   border-radius: 999px;
 }
 .foto.escondida { display: none; }
-.f1 { background: linear-gradient(160deg, #FBE3E8, #F4C3CF); }
+.f1 { background: linear-gradient(160deg, #FBE3E8, #F4C3CF); ;}
 .f2 { background: linear-gradient(160deg, #F5D7C8, #EBB69F); }
 .f3 { background: linear-gradient(160deg, #E8D5EC, #CFAAD8); }
 .f4 { background: linear-gradient(160deg, #F3E3D8, #E2C6B2); }
