@@ -322,26 +322,66 @@ input.invalido, select.invalido { border-color: var(--erro); }
   .grid-servicos, .grid-galeria { grid-template-columns: repeat(2, 1fr); }
 }
 
+ 
 @media (max-width: 768px) {
   body { font-size: 16px; }
   h2 { font-size: 2rem; }
   .secao { padding: 64px 0; }
   .topo { padding: 12px 20px; flex-wrap: wrap; }
   .menu-btn { display: flex; }
-
+ 
   nav { display: none; width: 100%; }
   nav.aberto { display: block; }
   nav ul { flex-direction: column; gap: 0; padding: 8px 0; }
   nav a { display: block; padding: 12px 0; }
-
+ 
   .hero { padding: 40px 20px; gap: 32px; }
   .hero-texto h1 { font-size: 2.4rem; }
   .hero-foto { height: 280px; border-radius: 140px 140px 24px 24px; }
-
-  .grid-servicos, .grid-galeria { grid-template-columns: 1fr; }
-  .foto { height: 220px; }
-  form { padding: 20px; }
-}
+ 
+  .grid-servicos { grid-template-columns: 1fr; }
+  /* ===== Galeria no celular: mosaico ===== */
+  /* filtros em uma linha que desliza para o lado */
+  .filtros {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    margin: 0 -24px 24px;
+    padding: 4px 24px;
+    scroll-snap-type: x proximity;
+    scroll-padding: 0 24px;
+    scrollbar-width: none;
+  }
+  .filtros::-webkit-scrollbar { display: none; }
+  .filtro { flex: none; scroll-snap-align: start; }
+ 
+  /* mosaico: fotos de tamanhos diferentes, sem buracos */
+  .grid-galeria {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 118px;
+    grid-auto-flow: dense;
+    gap: 8px;
+  }
+  .foto { height: auto; padding: 8px; border-radius: 16px; animation: aparecer .5s ease both; }
+  .foto:nth-child(5n + 1) { grid-column: span 2; grid-row: span2; }  /* grande */
+  .foto:nth-child(5n + 3) { grid-row: span 2; }                       /* alta */
+  .foto:nth-child(2) { animation-delay: .05s; }
+  .foto:nth-child(3) { animation-delay: .1s; }
+  .foto:nth-child(4) { animation-delay: .15s; }
+  .foto:nth-child(5) { animation-delay: .2s; }
+ 
+  /* degradê embaixo para a legenda aparecer bem sobre qualquer foto */
+  .foto::after {
+    content: '';
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 55%;
+    background: linear-gradient(to top, rgba(59, 42, 47, .55), transparent);
+    pointer-events: none;
+  }
+  .foto figcaption { z-index: 1; font-size: .72rem; padding: 3px 10px; }
+  .foto:active { transform: scale(.97); }
+  .foto:hover { transform: none; }
+  form { padding: 20px; }}
 
 /* ===== Botão de tema ===== */
 .tema-btn {
@@ -393,4 +433,13 @@ code { padding: 1px 6px; border-radius: 6px; background: var(--rosado); font-siz
 @media (max-width: 768px) {
   .tema-btn { order: 0; margin-left: auto; margin-right: 8px; }
   nav { order: 0; }
+}
+
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(14px) scale(.97); }
+  to { opacity: 1; transform: none; }
+}
+ 
+@media (prefers-reduced-motion: reduce) {
+  .foto { animation: none !important; }
 }
