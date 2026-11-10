@@ -118,6 +118,8 @@ document.getElementById('novoAgendamento').addEventListener('click', () => {
   form.hidden = false;
 });
 
+
+
 // ===== 5. Filtro da galeria =====
 const botoesFiltro = document.querySelectorAll('.filtro');
 const fotos = document.querySelectorAll('.foto');
