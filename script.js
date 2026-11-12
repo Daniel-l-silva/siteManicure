@@ -120,23 +120,91 @@ document.getElementById('novoAgendamento').addEventListener('click', () => {
 
 
 
-// ===== 5. Filtro da galeria =====
+// ===== 5. Galeria (fotos vêm das pastas) =====
+// COMO ADICIONAR FOTOS:
+// 1) Coloque a imagem na pasta da categoria:  img/francesinha/  img/nailart/  img/gel/
+// 2) Escreva o nome do arquivo na lista da categoria abaixo (com a extensão).
+// Exemplo:  francesinha: ['foto1.jpg', 'foto2.jpg'],
+// Enquanto uma lista estiver vazia, aparecem blocos coloridos no lugar das fotos.
+const FOTOS= {
+  francesinha: ['fibra1.jpg', 'fibra2.jpg'],
+  nailart: ['nail art/nailart2.jpg', 'nailart3.jpg'],
+  gel: ['gel1.jpg']
+};
+ 
+const NOMES = { francesinha: 'Francesinha', nailart: 'Nail art', gel: 'Gel' };
+const CORES = { francesinha: 'f1', nailart: 'f2', gel: 'f3' };
+const galeriaGrid = document.getElementById('galeriaGrid');
+ 
+function criarFoto(categoria, arquivo, numero) {
+  const figura = document.createElement('figure');
+  figura.className = 'foto';
+  figura.dataset.categoria = categoria;
+ 
+  if (arquivo) {
+    const img = document.createElement('img');
+    img.src = `img/${categoria}/${arquivo}`;
+    img.alt = `${NOMES[categoria]} - foto ${numero}`;
+    img.loading = 'lazy';
+    figura.appendChild(img);
+  } else {
+    figura.classList.add(CORES[categoria]);
+    figura.setAttribute('role', 'img');
+    figura.setAttribute('aria-label', `Espaço para foto de ${NOMES[categoria]}`);
+  }
+ 
+  const legenda = document.createElement('figcaption');
+  legenda.textContent = NOMES[categoria];
+  figura.appendChild(legenda);
+  return figura;
+}
+ 
+Object.keys(FOTOS).forEach((categoria) => {
+  const lista = FOTOS[categoria];
+  if (lista.length === 0) {
+    // sem fotos ainda: mostra 2 blocos de exemplo
+    galeriaGrid.appendChild(criarFoto(categoria, null, 1));
+    galeriaGrid.appendChild(criarFoto(categoria, null, 2));
+  } else {
+    lista.forEach((arquivo, i) => galeriaGrid.appendChild(criarFoto(categoria, arquivo, i + 1)));
+  }
+});
+ 
+// Filtro da galeria
 const botoesFiltro = document.querySelectorAll('.filtro');
-const fotos = document.querySelectorAll('.foto');
-
+ 
 botoesFiltro.forEach((botao) => {
   botao.addEventListener('click', () => {
     botoesFiltro.forEach((b) => b.classList.remove('ativo'));
     botao.classList.add('ativo');
-
+ 
     const filtro = botao.dataset.filtro;
-    fotos.forEach((foto) => {
+    galeriaGrid.querySelectorAll('.foto').forEach((foto) => {
       const mostrar = filtro === 'todos' || foto.dataset.categoria === filtro;
       foto.classList.toggle('escondida', !mostrar);
     });
   });
 });
-
+ 
+// Abrir e fechar a galeria (só no celular; no computador ela já fica aberta)
+const galeriaSecao = document.getElementById('galeria');
+const galeriaToggle = document.getElementById('galeriaToggle');
+const ehCelular = () => window.matchMedia('(max-width: 768px)').matches;
+ 
+function abrirGaleria(abrir) {
+  galeriaSecao.classList.toggle('aberta', abrir);
+  galeriaToggle.setAttribute('aria-expanded', abrir);
+  galeriaToggle.textContent = abrir ? 'Fechar fotos' : 'Ver fotos';
+}
+ 
+galeriaToggle.addEventListener('click', () => {
+  abrirGaleria(!galeriaSecao.classList.contains('aberta'));
+});
+ 
+// Tocar em "Galeria" no menu também abre as fotos no celular
+document.querySelectorAll('a[href="#galeria"]').forEach((link) => {
+  link.addEventListener('click', () => { if (ehCelular()) abrirGaleria(true); });
+});
 // ===== 6. Calculadora de orçamento =====
 const itensOrcamento = document.querySelectorAll('#orcamento input[type="checkbox"]');
 const totalEl = document.getElementById('total');

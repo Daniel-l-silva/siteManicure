@@ -236,7 +236,10 @@ nav a:hover { color: var(--rosa); }
 .f3 { background: linear-gradient(160deg, #E8D5EC, #CFAAD8); }
 .f4 { background: linear-gradient(160deg, #F3E3D8, #E2C6B2); }
 .f5 { background: linear-gradient(160deg, #F2B7BF, #DE808F); }
-
+ 
+/* botão de abrir a galeria: só no celular */
+.galeria-toggle { display: none; }
+ 
 /* ===== Sobre ===== */
 .sobre { display: flex; flex-wrap: wrap; align-items: center; gap: 48px; }
 .sobre > * { flex: 1 1 340px; min-width: 0; }
@@ -321,7 +324,7 @@ input.invalido, select.invalido { border-color: var(--erro); }
   .grid-servicos, .grid-galeria { grid-template-columns: repeat(2, 1fr); }
 }
 
- 
+
 @media (max-width: 768px) {
   body { font-size: 16px; }
   h2 { font-size: 2rem; }
@@ -339,7 +342,38 @@ input.invalido, select.invalido { border-color: var(--erro); }
   .hero-foto { height: 280px; border-radius: 140px 140px 24px 24px; }
  
   .grid-servicos { grid-template-columns: 1fr; }
-  /* ===== Galeria no celular: fotos quadradas ===== */
+  /* ===== Galeria no celular: começa fechada, só o título e o botão ===== */
+  .galeria-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 48px;
+    margin-top: 20px;
+    padding: 12px 28px;
+    border: 1px solid var(--rosa);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--rosa-escuro);
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .galeria-toggle::after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: rotate(45deg) translateY(-2px);
+    transition: transform .25s;
+  }
+  .galeria-toggle[aria-expanded="true"] { background: var(--rosa); color: #FFFFFF; }
+  .galeria-toggle[aria-expanded="true"]::after { transform: rotate(-135deg) translateY(-2px); }
+  .galeria-conteudo { display: none; margin-top: 28px; }
+  #galeria.aberta .galeria-conteudo { display: block; }
+  #galeria .secao-sub { margin-bottom: 24px; }
+ 
+  /* ===== Galeria no celular: fotos quadradas =====
   /* filtros em uma linha que desliza para o lado */
   .filtros {
     flex-wrap: nowrap;
@@ -370,16 +404,12 @@ input.invalido, select.invalido { border-color: var(--erro); }
     background: linear-gradient(to top, rgba(59, 42, 47, .55), transparent);
     pointer-events: none;
   }
-  .foto figcaption { z-index: 1; font-size: .72rem; padding: -50px -50px; margin: -70%; background-size: cover;}
+  .foto figcaption { z-index: 1; font-size: .72rem; padding: 3px 10px; }
   .foto:active { transform: scale(.97); }
   .foto:hover { transform: none; }
-   form { padding: 10px; }
-
-   .foto figcaption img{
-      border-radius: 0%;
-  }
+  form { padding: 20px; }
+}
  
-
 /* ===== Botão de tema ===== */
 .tema-btn {
   order: 3;
@@ -396,8 +426,7 @@ input.invalido, select.invalido { border-color: var(--erro); }
 }
 .tema-btn:hover { background: var(--rosa); color: #FFFFFF; }
 nav { order: 2; }
-
-/* ===== Calculadora de orçamento ===== */
+ /* ===== Calculadora de orçamento ===== */
 .orcamento { display: flex; flex-direction: column; gap: 12px; }
 .item-orc {
   display: flex;
@@ -431,7 +460,7 @@ code { padding: 1px 6px; border-radius: 6px; background: var(--rosado); font-siz
   .tema-btn { order: 0; margin-left: auto; margin-right: 8px; }
   nav { order: 0; }
 }
-
+ 
 @keyframes aparecer {
   from { opacity: 0; transform: translateY(14px) scale(.97); }
   to { opacity: 1; transform: none; }
@@ -440,4 +469,4 @@ code { padding: 1px 6px; border-radius: 6px; background: var(--rosado); font-siz
 @media (prefers-reduced-motion: reduce) {
   .foto { animation: none !important; }
 }
-}
+ 
