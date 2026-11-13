@@ -127,7 +127,7 @@ document.getElementById('novoAgendamento').addEventListener('click', () => {
 const FOTOS = {
  francesinha:['france1.jpg'],
   nailart: ['nailart1.jpg'],
-  gel: ['img:Gel/gel1.jpg']
+  gel: ['gel1.jpg']
 };
  
 const NOMES = { francesinha: 'Francesinha', nailart: 'Nail art', gel: 'Gel' };
