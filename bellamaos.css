@@ -363,6 +363,7 @@ input.invalido, select.invalido { border-color: var(--erro); }
   }
   .sobre-foto {
   height: 250px;
+  width: 300px;
   display: flex;
   align-items: center;
   margin-bottom: auto;
