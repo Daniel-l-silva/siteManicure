@@ -107,24 +107,28 @@
 
         <!--galeria-->
         <section id="galeria" class="secao">
-            <div class="container" h2>Galeria</h2>
-
-                <!-- Só aparece no celular: abre e fecha as fotos -->
-                <button type="button" class="galeria-toggle" id="galeriaToggle" aria-expanded="false"
-                    aria-controls="galeriaConteudo">Ver fotos</button>
-
-                <p class="secao-sub">Alguns dos meus trabalhos, Troque os blocos por suas fotos</p>
-                <div class="filtros">
-                    <button class="filtro ativo" data-filtro="*">Todos</button>
-                    <button class="filtro" data-filtro=".Francesinha">Francesinha</button>
-                    <button class="filtro" data-filtro=".nailart">nailart</button>
-                    <button class="filtro" data-filtro=".gel">gel</button>
-                </div>
-     <!-- As fotos são criadas pelo script.js a partir das pastas img/francesinha, img/nailart e img/gel -->
+      <div class="container">
+        <h2>Galeria</h2>
+ 
+        <!-- Só aparece no celular: abre e fecha as fotos -->
+        <button type="button" class="galeria-toggle" id="galeriaToggle" aria-expanded="false" aria-controls="galeriaConteudo">Ver fotos</button>
+ 
+        <div class="galeria-conteudo" id="galeriaConteudo">
+          <p class="secao-sub">Alguns dos meus trabalhos. Troque os blocos por suas fotos.</p>
+ 
+          <div class="filtros">
+            <button class="filtro ativo" data-filtro="todos">Todos</button>
+            <button class="filtro" data-filtro="francesinha">Francesinha</button>
+            <button class="filtro" data-filtro="nailart">Nail art</button>
+            <button class="filtro" data-filtro="gel">Gel</button>
+          </div>
+ 
+          <!-- As fotos são criadas pelo script.js a partir das pastas img/francesinha, img/nailart e img/gel -->
           <div class="grid-galeria" id="galeriaGrid"></div>
         </div>
       </div>
-    </section>        <!--Orçamento-->
+    </section>
+        <!--Orçamento-->
         <section id="orcamento" class="secao secao branca">
             <div class="container container-estreito">
                 <h2>Calcular seu Orçamento</h2>
