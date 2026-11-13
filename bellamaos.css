@@ -361,7 +361,15 @@ input.invalido, select.invalido { border-color: var(--erro); }
     font-weight: 700;
     cursor: pointer;
   }
-  
+  .sobre-foto {
+  height: 250px;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  margin-bottom: auto;
+  margin: -36px;
+}
+
 
   .galeria-toggle::after {
     content: '';
