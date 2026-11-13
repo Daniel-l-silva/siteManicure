@@ -362,8 +362,8 @@ input.invalido, select.invalido { border-color: var(--erro); }
     cursor: pointer;
   }
   .sobre-foto {
-  
-  height: 300px;
+  padding: 5%;
+  height: 350px;
   width: 350px;
   border-radius: 20px;
   background: linear-gradient(160deg, #F2B8C6, #D98CA3);
