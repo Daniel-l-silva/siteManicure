@@ -125,7 +125,7 @@ document.getElementById('novoAgendamento').addEventListener('click', () => {
 // Exemplo:  francesinha: ['foto1.jpg', 'foto2.jpg'],
 // Enquanto uma lista estiver vazia, aparecem blocos coloridos no lugar das fotos.
 const FOTOS = {
- francesinha:['pexels-anastasia-kisil-912962163-29837129.jpg'],
+ francesinha:['france1.jpg'],
   nailart: ['nailart1.jpg'],
   gel: ['img:Gel/gel1.jpg']
 };
