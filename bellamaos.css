@@ -298,7 +298,7 @@ input.invalido, select.invalido { border-color: var(--erro); }
 /* ===== Rodapé ===== */
 .rodape { background: var(--rodape-bg); color: #F6E9E4; padding: 64px 0 24px;}
 .rodape-grid { display: flex; flex-wrap: wrap; gap: 32px 64px; justify-content: space-between; }
-.rodape p { color: #D9C3BE; margin-bottom: .4rem; margin-left: auto; }
+.rodape p { color: #D9C3BE; margin-bottom: .4rem; margin-left: 50px; }
 .rodape strong { color: #F6E9E4; }
 .rodape-logo { font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 700; font-size: 1.8rem; color: #FFFFFF !important; }
 .copy { max-width: 1040px; margin: 40px auto 0; padding: 124px 24px 0; border-top: 1px solid #5A4047; font-size: .85rem; }
