@@ -363,8 +363,8 @@ input.invalido, select.invalido { border-color: var(--erro); }
   }
   .sobre-foto {
   margin: 20px;
-  height: 300px;
-  width: 200px;
+  height: 350px;
+  width: 300px;
   border-radius: 20px;
   background: linear-gradient(160deg, #F2B8C6, #D98CA3);
   display: flex;
