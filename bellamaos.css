@@ -367,6 +367,7 @@ input.invalido, select.invalido { border-color: var(--erro); }
   display: flex;
   align-items: center;
   margin-bottom: auto;
+  margin-left: -36px;
 }
 
 
