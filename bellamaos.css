@@ -365,7 +365,7 @@ input.invalido, select.invalido { border-color: var(--erro); }
   padding-left: -10%;
   height: 300px;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
 }
 
 
