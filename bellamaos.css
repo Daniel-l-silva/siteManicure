@@ -362,8 +362,8 @@ input.invalido, select.invalido { border-color: var(--erro); }
     cursor: pointer;
   }
   .sobre-foto {
-  height: 350px;
-  width: 300px;
+  height: 300px;
+  width: 280px;
   display: flex;
   align-items: center;
   
