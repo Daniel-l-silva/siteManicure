@@ -361,11 +361,12 @@ input.invalido, select.invalido { border-color: var(--erro); }
     font-weight: 700;
     cursor: pointer;
   }
-  .sobre-foto foto{
-  height: auto;
+  .sobre-foto {
+  height: 350px;
   width: 300px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: center;
   padding: -3.2cm;
   
   
